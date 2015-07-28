@@ -7,25 +7,31 @@
         xmlns:DataModel="clr-namespace:DataModel;assembly=DataModel" x:Class="BeerControl.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="529" Width="554.6" Loaded="Window_Loaded">
-    <Window.Resources>
-        <CollectionViewSource x:Key="hopsViewSource" d:DesignSource="{d:DesignInstance {x:Type DataModel:Hops}, CreateList=True}"/>
-        <CollectionViewSource x:Key="recipeViewSource" d:DesignSource="{d:DesignInstance {x:Type DataModel:Recipe}, CreateList=True}"/>
-        <CollectionViewSource x:Key="recipeHopStepsViewSource" Source="{Binding HopSteps, Source={StaticResource recipeViewSource}}"/>
-        <CollectionViewSource x:Key="mashViewSource" d:DesignSource="{d:DesignInstance {x:Type DataModel:Mash}, CreateList=True}"/>
-        <CollectionViewSource x:Key="mashMaltsViewSource" Source="{Binding Malts, Source={StaticResource mashViewSource}}"/>
-    </Window.Resources>
-    <DockPanel>
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_File">
-                <MenuItem Header="_New recipe"/>
-                <MenuItem Header="_Open recipe"/>
-            </MenuItem>
-            <MenuItem Header="_Ingredients">
-                <MenuItem Header="_Malt"/>
-                <MenuItem Header="_Hops"/>
-                <MenuItem Header="_Other"/>
-            </MenuItem>
-        </Menu>
-        <StackPanel DataContext="{StaticResource hopsViewSource}"/>
-    </DockPanel>
+    <Grid Name="grdMain">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <DockPanel Name="docPanMain" LastChildFill="False">
+            <Menu Height="25" Name="mnuMain" DockPanel.Dock="Top" >
+                <MenuItem Header="_File" Name="mnuFile">
+                    <MenuItem Header="_New recipe"/>
+                    <MenuItem Header="_Open recipe"/>
+                </MenuItem>
+                <MenuItem Header="_Ingredients" Name="mnuIngredients">
+                    <MenuItem Header="_Malt" Name="mnuIngredientsMalts" Click="mnuIngredientsMalts_Click_1"/>
+                    <MenuItem Header="_Hops"/>
+                    <MenuItem Header="_Other"/>
+                </MenuItem>
+                <MenuItem Header="_Help" Name="mnuHelp" ToolTip="Find help here">
+                    <MenuItem Header="_About"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+    </Grid>
+
+
+
+
+
 </Window>
