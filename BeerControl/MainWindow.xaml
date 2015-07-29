@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BeerControl"
         xmlns:DataModel="clr-namespace:DataModel;assembly=DataModel" x:Class="BeerControl.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="529" Width="554.6" Loaded="Window_Loaded">
+        Title="MainWindow" Height="732.2" Width="848" Loaded="Window_Loaded">
     <Grid Name="grdMain">
         <Grid.RowDefinitions>
             <RowDefinition Height="25" />
@@ -28,6 +28,43 @@
                 </MenuItem>
             </Menu>
         </DockPanel>
+        <Canvas Name="mainCanvasMain" Margin="0,0.2,0,9.6" Grid.Row="1">
+            <Border BorderBrush="Black" BorderThickness="1" Height="144" Canvas.Left="10" Canvas.Top="10" Width="354" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+
+
+
+            <ListBox x:Name="mashListBox" Height="100" Canvas.Left="19" Canvas.Top="40" Width="253"/>
+            <Label x:Name="label" Content="Mash" Canvas.Left="19" Canvas.Top="10" RenderTransformOrigin="0.224,0.109"/>
+            <Label x:Name="label1" Content="Hops" Canvas.Left="19" Canvas.Top="159"/>
+            <ListBox x:Name="hopsListBox" Height="100" Canvas.Left="19" Canvas.Top="190" Width="253"/>
+            <Label x:Name="label2" Content="Other ingredients" Canvas.Left="19" Canvas.Top="323"/>
+            <ListBox x:Name="otherIngreListBox" Height="100" Canvas.Left="22" Canvas.Top="356" Width="250"/>
+            <Label x:Name="label3" Content="Fermatation" Canvas.Left="22" Canvas.Top="475"/>
+            <Label x:Name="label4" Content="Yeast:" Canvas.Left="26" Canvas.Top="506"/>
+            <TextBox x:Name="yeastTextBox" Height="23" Canvas.Left="66" TextWrapping="Wrap" Text="Pilsner yeast" Canvas.Top="507" Width="120"/>
+            <Label x:Name="label5" Content="at temperature [C]:" Canvas.Left="191" Canvas.Top="506"/>
+            <TextBox x:Name="fermTemp" Height="23" Canvas.Left="307" TextWrapping="Wrap" Text="7" Canvas.Top="507" Width="27" />
+            <Label x:Name="label6" Content="Bottle Conditioning" Canvas.Left="22" Canvas.Top="536"/>
+            <Label x:Name="label7" Content="for [weeks]:" Canvas.Left="339" Canvas.Top="506"/>
+            <TextBox x:Name="fermTimeTextBox" Height="23" Canvas.Left="415" TextWrapping="Wrap" Text="3" Canvas.Top="507" Width="25"/>
+            <Label x:Name="label8" Content="Time [week]:" Canvas.Left="27" Canvas.Top="567"/>
+            <TextBox x:Name="bcTimetextBox2" Height="23" Canvas.Left="109" TextWrapping="Wrap" Text="3" Canvas.Top="569" Width="37"/>
+            <Label x:Name="label9" Content="at temerature [C]:" Canvas.Left="151" Canvas.Top="567"/>
+            <TextBox x:Name="bcTemptextBox" Height="23" Canvas.Left="259" TextWrapping="Wrap" Text="3" Canvas.Top="569" Width="55"/>
+            <Button x:Name="addMaltbutton" Content="Add" Canvas.Left="277" Canvas.Top="40" Width="75" Click="addMaltbutton_Click"/>
+            <Button x:Name="addHopsbutton" Content="Add" Canvas.Left="277" Canvas.Top="190" Width="75"/>
+            <Button x:Name="addOtherIngrebutton" Content="Add" Canvas.Left="277" Canvas.Top="356" Width="75"/>
+            <Frame x:Name="frame" Content="Calculated beer properties" Height="244" Canvas.Left="583" Canvas.Top="10" Width="249" BorderThickness="0" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" OpacityMask="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                <Frame.Background>
+                    <ImageBrush/>
+                </Frame.Background>
+            </Frame>
+
+
+
+        </Canvas>
+
+
     </Grid>
 
 

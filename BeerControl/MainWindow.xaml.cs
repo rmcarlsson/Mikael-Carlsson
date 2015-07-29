@@ -50,5 +50,12 @@ namespace BeerControl
             MaltWindow mw = new MaltWindow();
             mw.Show();
         }
+
+        private void addMaltbutton_Click(object sender, RoutedEventArgs e)
+        {
+            MaltWindow mw = new MaltWindow();
+            mw.Show();
+
+        }
     }
 }
